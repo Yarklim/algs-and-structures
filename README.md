@@ -1,1 +1,1 @@
-# algs-and-structures
+# Algorithms and data structures

@@ -23,5 +23,3 @@ function selectionSort(array) {
 }
 
 console.log(selectionSort(array));
-
-// function selectionSort(array) {}
