@@ -40,6 +40,9 @@ function partition(arr, left, right) {
   let i = left - 1;
   let j = right + 1;
 
+  /**
+   * Сравнивает элементы слева и справа, и меняет их местами
+   */
   while (true) {
     do {
       i++;
