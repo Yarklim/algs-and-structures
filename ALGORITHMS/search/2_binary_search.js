@@ -1,5 +1,5 @@
-// Бинарный поиск выполняется только в отсортированном массиве
 // O(log n)
+// Бинарный поиск выполняется только в отсортированном массиве
 
 const array = [1, 4, 8, 25, 99, 115, 675, 1101, 1400, 2100, 4050, 9787, 12320];
 
@@ -24,6 +24,8 @@ export const binarySearch = (nums, target) => {
 
   return -1;
 };
+
+console.log(binarySearch(array, 675));
 
 // ================== Рекурсивный бинарный поиск ====================
 export const recursiveBinarySearch = (array, item, start, end) => {

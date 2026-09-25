@@ -1,3 +1,5 @@
+// O(n)
+
 const array = [1, 4, 5, 8, 6, 3, 7, 10, 9, 15, 25];
 
 function linearSearch(array, item) {
