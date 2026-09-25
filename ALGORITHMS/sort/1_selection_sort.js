@@ -1,25 +1,32 @@
-// const array = [0, 3, 4, 2, 7, 1, 9, 6, 5, 2, 8, 4, 7, -1, -5, 23, 6, 35, 48, 32];
+// =========== O(n^2), память O(1) ============
 
-// Создаю рандомный массив из 100 чисел от -500 до 500
+// Ищет минимальный элемент и ставит его на нужное место.
+
+// Ррандомный массив из 100 чисел от -500 до 500
 const array = Array(100)
   .fill(null)
   .map(() => Math.floor(Math.random() * 1000) - 500);
-console.log(array);
 
-// Сортирую рандомный массив
-function selectionSort(array) {
-  for (let i = 0; i < array.length; i++) {
-    let indexMin = i;
-    for (let j = i + 1; j < array.length; j++) {
-      if (array[j] < array[indexMin]) {
-        indexMin = j;
+function selectionSort(arr) {
+  const n = arr.length;
+
+  for (let i = 0; i < n - 1; i++) {
+    let minIndex = i;
+
+    for (let j = i + 1; j < n; j++) {
+      if (arr[j] < arr[minIndex]) {
+        minIndex = j;
       }
     }
-    let tmp = array[i];
-    array[i] = array[indexMin];
-    array[indexMin] = tmp;
+
+    if (minIndex !== i) {
+      let temp = arr[i];
+      arr[i] = arr[minIndex];
+      arr[minIndex] = temp;
+    }
   }
-  return array;
+
+  return arr;
 }
 
 console.log(selectionSort(array));
