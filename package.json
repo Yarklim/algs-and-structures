@@ -1,0 +1,29 @@
+{
+  "name": "algs-and-structures",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yarklim/algs-and-structures.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Yarklim/algs-and-structures/issues"
+  },
+  "homepage": "https://github.com/Yarklim/algs-and-structures#readme",
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@typescript-eslint/eslint-plugin": "^8.70.1",
+    "@typescript-eslint/parser": "^8.70.1",
+    "eslint": "^10.11.0",
+    "globals": "^17.12.0",
+    "typescript-eslint": "^8.70.1"
+  }
+}
