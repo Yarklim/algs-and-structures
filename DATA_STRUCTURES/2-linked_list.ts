@@ -46,6 +46,8 @@ class LinkedList {
 
     node.next = this.head;
     this.head = node;
+
+    return this;
   }
 
   // Добавить в конец
@@ -54,7 +56,7 @@ class LinkedList {
 
     if (!this.head) {
       this.head = node;
-      return;
+      return this;
     }
 
     let current = this.head;
@@ -64,6 +66,8 @@ class LinkedList {
     }
 
     current.next = node;
+
+    return this;
   }
 
   // Найти элемент
@@ -107,15 +111,29 @@ class LinkedList {
 
     return false;
   }
+
+  // Вернуть массив нод
+  toArray() {
+    const nodes = [];
+
+    let currentNode = this.head;
+
+    while (currentNode) {
+      nodes.push(currentNode);
+      currentNode = currentNode.next;
+    }
+
+    return nodes.map((i) => i.value);
+  }
 }
 
 const list = new LinkedList();
-list.prepend(20);
-list.prepend(10);
-list.append(30);
+
+list.append(10).append(20).append(30);
 
 console.log(list);
 console.log(list.head?.next?.next?.value);
+console.log(list.toArray());
 
 list.remove(20);
 console.log(list);
@@ -123,11 +141,11 @@ console.log(list.head?.next?.next?.value);
 
 // ------------------ Реализация двусвязного списка: -------------------
 class DoublyListNode {
-  value: number;
+  value: string;
   next: DoublyListNode | null;
   prev: DoublyListNode | null;
 
-  constructor(value: number) {
+  constructor(value: string) {
     this.value = value;
     this.next = null;
     this.prev = null;
@@ -138,13 +156,13 @@ class DoublyLinkedList {
   head: DoublyListNode | null = null;
   tail: DoublyListNode | null = null;
 
-  prepend(value: number): void {
+  prepend(value: string) {
     const node = new DoublyListNode(value);
 
     if (!this.head) {
       this.head = node;
       this.tail = node;
-      return;
+      return this;
     }
 
     node.next = this.head;
@@ -153,22 +171,24 @@ class DoublyLinkedList {
     this.head = node;
   }
 
-  append(value: number): void {
+  append(value: string) {
     const node = new DoublyListNode(value);
 
     if (!this.tail) {
       this.head = node;
       this.tail = node;
-      return;
+      return this;
     }
 
     this.tail.next = node;
     node.prev = this.tail;
 
     this.tail = node;
+
+    return this;
   }
 
-  find(value: number): DoublyListNode | null {
+  find(value: string): DoublyListNode | null {
     let current = this.head;
 
     while (current) {
@@ -182,7 +202,7 @@ class DoublyLinkedList {
     return null;
   }
 
-  remove(value: number): boolean {
+  remove(value: string): boolean {
     const node = this.find(value);
 
     if (!node) {
@@ -206,4 +226,28 @@ class DoublyLinkedList {
 
     return true;
   }
+
+  // Вернуть массив нод
+  toArray() {
+    const nodes = [];
+
+    let currentNode = this.head;
+
+    while (currentNode) {
+      nodes.push(currentNode);
+      currentNode = currentNode.next;
+    }
+
+    return nodes.map((i) => i.value);
+  }
 }
+
+const doublyLink = new DoublyLinkedList();
+
+doublyLink.append('a').append('b').append('c').prepend('x');
+console.log(doublyLink.toArray());
+
+doublyLink.remove('a');
+console.log(doublyLink.toArray());
+
+console.log(doublyLink.find('b'));
