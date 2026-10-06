@@ -15,7 +15,7 @@
  * - Сложный дебаг
  */
 
-// ================= Factorial, time and space O(n) ===================
+// ================= Factorial, time and space O(n) ====================
 const factorial = (n: number): number => {
   // 0! = 1
   // n! = n * (n - 1)!, например 2! = 1 * 2 = 2, 4! = 1 * 2 * 3 * 4 = 24
